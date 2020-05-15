@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".nueva_lista">
 
     <EditText
         android:id="@+id/editText"
@@ -12,20 +12,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:hint="@string/new_list_input_name_hint"
+        android:hint="Nombre de la lista"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/crear_lista_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/new_list_button_name"
+        android:text="Crear Lista"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

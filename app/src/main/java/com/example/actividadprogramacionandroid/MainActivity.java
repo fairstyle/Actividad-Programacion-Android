@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    private Lista listaGeneral = new Lista("Lista General", 0);
+    //Lista lista = (Lista)getApplicationContext();
+    //private Lista listaGeneral = new Lista("Lista General", 0);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,29 +35,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "ACA HAY QUE ENVIAR A LA NUEVA LISTA DE COMPRAS", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.lista_uno, R.id.lista_dos, R.id.lista_tres, R.id.nueva_lista)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+        //System.out.println(lista.getLista().size());
         //INICIO MI APP
-        listaGeneral.agregar(new Lista("Lista de Productos", 1));
+        /*listaGeneral.agregar(new Lista("Lista de Productos", 1));
         EjemploProductos Listaaux = new EjemploProductos(listaGeneral);
         listaGeneral = Listaaux.getListaGeneral();
 
@@ -74,14 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.print("Producto: ");
                 System.out.println(pr.getNombre());
             }
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        }*/
     }
 
     @Override
@@ -90,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

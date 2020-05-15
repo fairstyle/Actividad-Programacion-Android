@@ -4,10 +4,26 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/lista_uno"
+            android:icon="@drawable/ic_list_alt_black_24dp"
+            android:title="Compras Agro" />
+
+        <item
+            android:id="@+id/lista_dos"
+            android:icon="@drawable/ic_list_alt_black_24dp"
+            android:title="Lista para el Auto" />
+
+        <item
+            android:id="@+id/lista_tres"
+            android:icon="@drawable/ic_list_alt_black_24dp"
+            android:title="Supermercado" />
+
+        <item
+            android:id="@+id/nueva_lista"
             android:icon="@drawable/ic_add_black_24dp"
-            android:title="@string/menu_home" />
+            android:title="Crear nueva lista de compras" />
         <!--<item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"

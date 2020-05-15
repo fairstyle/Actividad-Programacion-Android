@@ -13,7 +13,4 @@
 
     <string name="home_second">Home Second</string>
 
-
-    <string name="new_list_input_name_hint">Nombre de la Lista</string>
-    <string name="new_list_button_name">Crear Lista</string>
 </resources>

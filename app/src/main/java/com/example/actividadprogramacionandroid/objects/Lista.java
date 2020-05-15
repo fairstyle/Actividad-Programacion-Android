@@ -1,10 +1,12 @@
 package com.example.actividadprogramacionandroid.objects;
 
+import android.app.Application;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class Lista {
+public class Lista extends Application {
 
     // ------------------------ VARS ------------------------
     private String _id;
