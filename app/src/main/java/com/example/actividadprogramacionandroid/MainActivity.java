@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.actividadprogramacionandroid.objects.EjemploProductos;
+import com.example.actividadprogramacionandroid.objects.Lista;
+import com.example.actividadprogramacionandroid.objects.Producto;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -16,9 +19,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    private Lista listaGeneral = new Lista("Lista General", 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "ACA HAY QUE ENVIAR A LA NUEVA LISTA DE COMPRAS", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -45,6 +52,29 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+        //INICIO MI APP
+        listaGeneral.agregar(new Lista("Lista de Productos", 1));
+        EjemploProductos Listaaux = new EjemploProductos(listaGeneral);
+        listaGeneral = Listaaux.getListaGeneral();
+
+
+        Lista prueba = (Lista)listaGeneral.getLista().get(0);
+
+        prueba.getIndexOf("Bom o Bom");
+
+        for(Object p: listaGeneral.getLista()){
+            Lista li = (Lista) p;
+            System.out.print("Lista: ");
+            System.out.println(li.getNombre());
+
+            for(Object n: li.getLista()){
+                Producto pr = (Producto) n;
+                System.out.print("Producto: ");
+                System.out.println(pr.getNombre());
+            }
+        }
     }
 
     @Override
